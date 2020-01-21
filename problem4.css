@@ -1,0 +1,17 @@
+html, body {
+  background: url(./images/marble.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.footer {
+    position:absolute;
+    bottom: 0px;
+    right: 0;
+    height: 5%;
+    text-align: right;
+    padding: 3%;
+}
+
