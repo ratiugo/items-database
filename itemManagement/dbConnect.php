@@ -18,7 +18,7 @@
         public function connect(){
             $this->servername = "localhost";
             $this->username = "coltonwilliams";
-            $this->password = "apple97";
+            $this->password = "";
             $this->dbname = "problem4-items";
             $this->charset = "utf8mb4";
 
