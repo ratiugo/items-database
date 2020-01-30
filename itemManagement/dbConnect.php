@@ -15,16 +15,17 @@
         //     Spoon: 0.05kg, 15cm x 5cm x 2xm
 
         // Enter your database information
+
         public function connect(){
-            $this->servername = "localhost";
-            $this->username = "coltonwilliams";
-            $this->password = "";
-            $this->dbname = "problem4-items";
+            $this->servername = $url["us-cdbr-iron-east-04.cleardb.net"];;
+            $this->username = $url["b4dd3dae1de623"];
+            $this->password = $url["9dd61eb4"];
+            $this->dbname = substr($url["heroku_1d2208bffa1b10a"], 1);
             $this->charset = "utf8mb4";
 
             try {
 
-            $pdo = new PDO("pgsql: host=localhost; dbname=".$this->dbname, $this->username, $this->password);
+            $pdo = new PDO("pgsql: host=".$this->servername; dbname=".$this->dbname, $this->username, $this->password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $pdo;
 
