@@ -10,11 +10,17 @@
         public $dbname = "heroku_0584f2ae52fda11";
         public $charset = "utf8mb4";
 
-        public $conn = new mysqli($servername, $username, $password, $dbname);
+        public $conn;
+
+        function __construct(){
+
+            $this->conn = new mysqli($servername, $username, $password, $dbname)
+
+        }
 
         //get item weight
         public function getItemWeight($name){
-            $stmt = $conn->query("SELECT * FROM items WHERE name = '$name'");
+            $stmt = $this->conn->query("SELECT * FROM items WHERE name = '$name'");
             while($row = $stmt->fetch()){
                 $weight = $row['weight'];
                 return $weight;
@@ -23,7 +29,7 @@
 
         //get item length
         public function getItemLength($name){
-            $stmt = $conn->query("SELECT * FROM items WHERE name = '$name'");
+            $stmt = $this->conn->query("SELECT * FROM items WHERE name = '$name'");
             while($row = $stmt->fetch()){
                 $length = $row['length'];
                 return $length;
@@ -32,7 +38,7 @@
 
         //get item width
         public function getItemWidth($name){
-            $stmt = $conn->query("SELECT * FROM items WHERE name = '$name'");
+            $stmt = $this->conn->query("SELECT * FROM items WHERE name = '$name'");
             while($row = $stmt->fetch()){
                 $width = $row['width'];
                 return $width;
@@ -41,7 +47,7 @@
 
         //get item height
         public function getItemHeight($name){
-            $stmt = $conn->query("SELECT * FROM items WHERE name = '$name'");
+            $stmt = $this->conn->query("SELECT * FROM items WHERE name = '$name'");
             while($row = $stmt->fetch()){
                 $height = $row['height'];
                 return $height;
@@ -50,7 +56,7 @@
 
         //update item weight
         public function updateItemWeight($name, $weight){
-            $stmt = $conn->query("
+            $stmt = $this->conn->query("
                 UPDATE items
                 SET weight = $weight
                 WHERE name = '$name'
@@ -60,7 +66,7 @@
 
         //update item length
         public function updateItemLength($name, $length){
-            $stmt = $conn->query("
+            $stmt = $this->conn->query("
                 UPDATE items
                 SET length = $length
                 WHERE name = '$name'
@@ -70,7 +76,7 @@
 
         //update item weight
         public function updateItemWidth($name, $width){
-            $stmt = $conn->query("
+            $stmt = $this->conn->query("
                 UPDATE items
                 SET width = $width
                 WHERE name = '$name'
@@ -80,7 +86,7 @@
 
         //update item weight
         public function updateItemheight($name, $height){
-            $stmt = $conn->query("
+            $stmt = $this->conn->query("
                 UPDATE items
                 SET height = $height
                 WHERE name = '$name'
@@ -90,7 +96,7 @@
 
         //create new item
         public function createNewItem($name, $weight, $length, $width, $height){
-            $stmt = $conn->query("
+            $stmt = $this->conn->query("
                 INSERT INTO items (name, weight, length, width, height)
                 VALUES ('$name', $weight, $length, $width, $height);
             ");
@@ -99,7 +105,7 @@
 
         //get all items
         public function getAllItems(){
-            $stmt = $conn->query("SELECT name FROM items");
+            $stmt = $this->conn->query("SELECT name FROM items");
             $allItemsArray = [];
             while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
                 $allItemsArray[] = $row['name'];
