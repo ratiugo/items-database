@@ -28,7 +28,7 @@
 
             try {
 
-            $pdo = new PDO("mysql: host=".$this->servername, "dbname=".$this->dbname, $this->username, $this->password);
+            $pdo = new PDO("pgsql: host=us-cdbr-iron-east-04.cleardb.net; dbname=".$this->dbname, $this->username, $this->password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $pdo;
 
