@@ -14,7 +14,7 @@
 
         function __construct(){
 
-            $this->conn = new mysqli($servername, $username, $password, $dbname)
+            $this->conn = new mysqli($servername, $username, $password, $dbname);
 
         }
 
