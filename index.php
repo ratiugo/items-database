@@ -2,11 +2,11 @@
     require_once "itemManagement/dbConnect.php";
     require_once "itemManagement/items.php";
 
-    // $name = $_POST["name"];
-    // $itemWeight = $_POST["weight"];
-    // $itemLength = $_POST["length"];
-    // $itemWidth = $_POST["width"];
-    // $itemHeight = $_POST["height"];
+    $name = $_POST["name"];
+    $itemWeight = $_POST["weight"];
+    $itemLength = $_POST["length"];
+    $itemWidth = $_POST["width"];
+    $itemHeight = $_POST["height"];
 
     $myItem = new Item;
 
