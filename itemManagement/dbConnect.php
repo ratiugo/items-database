@@ -24,7 +24,7 @@
             $dbname = "heroku_0584f2ae52fda11";
             $charset = "utf8mb4";
 
-            $conn = new mysqli("pgsql: host=us-cdbr-iron-east-04.cleardb.net; dbname=".$dbname, $username, $password);
+            $conn = new mysqli($servername, $username, $password, $dbname);
             return $conn;
 
         }
