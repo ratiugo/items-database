@@ -18,23 +18,15 @@
 
         public function connect(){
 
-            $url = parse_url(getenv("mysql://b4dd3dae1de623:9dd61eb4@us-cdbr-iron-east-04.cleardb.net/heroku_1d2208bffa1b10a?reconnect=true"));
-
-            $servername = $url["us-cdbr-iron-east-04.cleardb.net"];;
-            $username = $url["b4dd3dae1de623"];
-            $password = $url["9dd61eb4"];
-            $dbname = substr($url["heroku_1d2208bffa1b10a"], 1);
+            $servername = "us-cdbr-iron-east-04.cleardb.net";
+            $username = "bbc0c39e767f31";
+            $password = "ff6732e0";
+            $dbname = "heroku_0584f2ae52fda11";
             $charset = "utf8mb4";
 
-            try {
+            $conn = new mysqli("pgsql: host=us-cdbr-iron-east-04.cleardb.net; dbname=".$dbname, $username, $password);
+            return $conn;
 
-            $pdo = new PDO("pgsql: host=us-cdbr-iron-east-04.cleardb.net; dbname=".$dbname, $username, $password);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $pdo;
-
-            } catch (PDOException $e) {
-                echo "Connection Failed: ".$e->getMessage();
-            }
         }
 
     }
