@@ -30,6 +30,7 @@
 
             $pdo = new PDO("mysql: host=".$this->servername"; dbname=".$this->dbname, $this->username, $this->password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            var_dump($pdo);
             return $pdo;
 
             } catch (PDOException $e) {
