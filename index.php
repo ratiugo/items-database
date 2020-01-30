@@ -14,8 +14,8 @@
     $myItem -> createNewItem($name, $itemWeight, $itemLength, $itemWidth, $itemHeight);
     }
 
-    $getAllItems = new Item;
-    $allItems = $getAllItems -> getAllItems();
+    // $getAllItems = new Item;
+    // $allItems = $getAllItems -> getAllItems();
 
 ?>
 
