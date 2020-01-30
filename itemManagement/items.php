@@ -4,11 +4,11 @@
 
     class Item{
 
-        public $this->servername = "us-cdbr-iron-east-04.cleardb.net";
-        public $this->username = "bbc0c39e767f31";
-        public $this->password = "ff6732e0";
-        public $this->dbname = "heroku_0584f2ae52fda11";
-        public $this->charset = "utf8mb4";
+        public $servername = "us-cdbr-iron-east-04.cleardb.net";
+        public $username = "bbc0c39e767f31";
+        public $password = "ff6732e0";
+        public $dbname = "heroku_0584f2ae52fda11";
+        public $charset = "utf8mb4";
 
         public $conn;
 
