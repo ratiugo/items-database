@@ -10,7 +10,7 @@
         public $dbname = "heroku_0584f2ae52fda11";
         public $charset = "utf8mb4";
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        public $conn = new mysqli($servername, $username, $password, $dbname);
 
         //get item weight
         public function getItemWeight($name){
