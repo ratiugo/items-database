@@ -21,7 +21,7 @@
         //get item weight
         public function getItemWeight($name){
             $stmt = $this->conn->query("SELECT * FROM items WHERE name = '$name'");
-            while($row = $stmt->get_result()){
+            while($row = $stmt->fetch_object()){
                 $weight = $row['weight'];
                 return $weight;
             }
@@ -30,7 +30,7 @@
         //get item length
         public function getItemLength($name){
             $stmt = $this->conn->query("SELECT * FROM items WHERE name = '$name'");
-            while($row = $stmt->get_result()){
+            while($row = $stmt->fetch_object()){
                 $length = $row['length'];
                 return $length;
             }
@@ -39,7 +39,7 @@
         //get item width
         public function getItemWidth($name){
             $stmt = $this->conn->query("SELECT * FROM items WHERE name = '$name'");
-            while($row = $stmt->get_result()){
+            while($row = $stmt->fetch_object()){
                 $width = $row['width'];
                 return $width;
             }
@@ -48,7 +48,7 @@
         //get item height
         public function getItemHeight($name){
             $stmt = $this->conn->query("SELECT * FROM items WHERE name = '$name'");
-            while($row = $stmt->get_result()){
+            while($row = $stmt->fetch_object()){
                 $height = $row['height'];
                 return $height;
             }
