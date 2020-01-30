@@ -104,14 +104,14 @@
         }
 
         //get all items
-        // public function getAllItems(){
-        //     $stmt = $this->conn->query("SELECT name FROM items");
-        //     $allItemsArray = [];
-        //     while ($row = $stmt -> fetch()){
-        //         $allItemsArray[] = $row['name'];
-        //     }
-        //     return json_encode($allItemsArray);
-        // }
+        public function getAllItems(){
+            $stmt = $this->conn->query("SELECT name FROM items");
+            $allItemsArray = [];
+            while ($row = $stmt -> fetch_all(MYSQLI_ASSOC)){
+                $allItemsArray[] = $row['name'];
+            }
+            return json_encode($allItemsArray);
+        }
 
     }
 
