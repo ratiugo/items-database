@@ -20,15 +20,15 @@
 
             $url = parse_url(getenv("mysql://b4dd3dae1de623:9dd61eb4@us-cdbr-iron-east-04.cleardb.net/heroku_1d2208bffa1b10a?reconnect=true"));
 
-            $this->servername = $url["us-cdbr-iron-east-04.cleardb.net"];;
-            $this->username = $url["b4dd3dae1de623"];
-            $this->password = $url["9dd61eb4"];
-            $this->dbname = substr($url["heroku_1d2208bffa1b10a"], 1);
-            $this->charset = "utf8mb4";
+            $servername = $url["us-cdbr-iron-east-04.cleardb.net"];;
+            $username = $url["b4dd3dae1de623"];
+            $password = $url["9dd61eb4"];
+            $dbname = substr($url["heroku_1d2208bffa1b10a"], 1);
+            $charset = "utf8mb4";
 
             try {
 
-            $pdo = new PDO("pgsql: host=us-cdbr-iron-east-04.cleardb.net; dbname=".$this->dbname, $this->username, $this->password);
+            $pdo = new PDO("pgsql: host=us-cdbr-iron-east-04.cleardb.net; dbname=".$dbname, $username, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $pdo;
 
