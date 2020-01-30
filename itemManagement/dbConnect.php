@@ -2,6 +2,12 @@
 
     class itemsDatabase {
 
+        private $servername;
+        private $username;
+        private $password;
+        private $dbName;
+        private $charset;
+
         // Please create a database with the following items and measurements in order to use the app:
 
         //     Fiddle: 1 kg, 60cm x 20cm x 10cm
@@ -14,13 +20,21 @@
 
             $url = parse_url(getenv("mysql://b4dd3dae1de623:9dd61eb4@us-cdbr-iron-east-04.cleardb.net/heroku_1d2208bffa1b10a?reconnect=true"));
 
-            $server = $url["us-cdbr-iron-east-04.cleardb.net"];
-            $username = $url["b4dd3dae1de623"];
-            $password = $url["9dd61eb4"];
-            $db = substr($url["heroku_1d2208bffa1b10a"], 1);
+            $this->servername = $url["us-cdbr-iron-east-04.cleardb.net"];;
+            $this->username = $url["b4dd3dae1de623"];
+            $this->password = $url["9dd61eb4"];
+            $this->dbname = substr($url["heroku_1d2208bffa1b10a"], 1);
+            $this->charset = "utf8mb4";
 
-            $conn = new mysqli($server, $username, $password, $db);
-            return $conn;
+            try {
+
+            $pdo = new PDO("mysql: host=".$this->servername"; dbname=".$this->dbname, $this->username, $this->password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $pdo;
+
+            } catch (PDOException $e) {
+                echo "Connection Failed: ".$e->getMessage();
+            }
         }
 
     }
