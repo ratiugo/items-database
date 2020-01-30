@@ -107,7 +107,7 @@
         public function getAllItems(){
             $stmt = $this->conn->query("SELECT name FROM items");
             $allItemsArray = [];
-            while ($row = $stmt -> fetch(){
+            while ($row = $stmt -> fetch()){
                 $allItemsArray[] = $row['name'];
             }
             return json_encode($allItemsArray);
