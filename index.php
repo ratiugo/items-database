@@ -55,7 +55,7 @@
           <div class="tc-l mt4 mt5-m mt6-l ph3">
 
             <h1 class="f2 f1-l fw2 black-90 mb0 lh-title">
-              Welcome to the Hey Di Di Co Shipping App!
+              Item Storage
             </h1>
 
             <h2 class="fw1 f3 black-80 mt3 mb4 w-50 center">
